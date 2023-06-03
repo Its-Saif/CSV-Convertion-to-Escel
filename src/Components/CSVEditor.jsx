@@ -34,7 +34,13 @@ function CsvEditor() {
 			Player_1_InGame,
 			Player_2_InGame,
 			Email_P1,
-			Email_P2;
+			Email_P2,
+			Discord_P1,
+			Discord_P2,
+			Game_Rank_P1,
+			Game_Rank_P2,
+			DOB_P1,
+			DOB_P2;
 
 		try {
 			const playerNames = JSON.parse(row["full-name"]);
@@ -55,7 +61,6 @@ function CsvEditor() {
 			Player_2_InGame = "N/A";
 			console.error("Error parsing In-game Name:", error);
 		}
-
 		try {
 			const Mail = JSON.parse(row["email"]);
 			Email_P1 = Mail[0];
@@ -63,6 +68,33 @@ function CsvEditor() {
 		} catch (error) {
 			Email_P1 = "N/A";
 			Email_P2 = "N/A";
+			console.error("Error parsing email:", error);
+		}
+		try {
+			const DisID = JSON.parse(row["Discord"]);
+			Discord_P1 = DisID[0];
+			Discord_P2 = DisID[1];
+		} catch (error) {
+			Discord_P1 = "N/A";
+			Discord_P2 = "N/A";
+			console.error("Error parsing email:", error);
+		}
+		try {
+			const Rank = JSON.parse(row["In-game-rank"]);
+			Game_Rank_P1 = Rank[0];
+			Game_Rank_P2 = Rank[1];
+		} catch (error) {
+			Game_Rank_P1 = "N/A";
+			Game_Rank_P2 = "N/A";
+			console.error("Error parsing email:", error);
+		}
+		try {
+			const Dob = JSON.parse(row["dob"]);
+			DOB_P1 = Dob[0];
+			DOB_P2 = Dob[1];
+		} catch (error) {
+			DOB_P1 = "N/A";
+			DOB_P2 = "N/A";
 			console.error("Error parsing email:", error);
 		}
 
@@ -74,6 +106,10 @@ function CsvEditor() {
 			Player_2_InGame,
 			Email_P1,
 			Email_P2,
+			Discord_P1,
+			Discord_P2,
+			Game_Rank_P1,
+			Game_Rank_P2,
 		};
 
 		return rowData;
