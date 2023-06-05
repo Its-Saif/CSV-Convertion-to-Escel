@@ -40,7 +40,9 @@ function CsvEditor() {
 			Game_Rank_P1,
 			Game_Rank_P2,
 			DOB_P1,
-			DOB_P2;
+			DOB_P2,
+			Phone_P1,
+			Phone_P2;
 
 		try {
 			const playerNames = JSON.parse(row["full-name"]);
@@ -97,6 +99,15 @@ function CsvEditor() {
 			DOB_P2 = "N/A";
 			console.error("Error parsing email:", error);
 		}
+		try {
+			const pho = JSON.parse(row["phone"]);
+			Phone_P1 = pho[0];
+			Phone_P2 = pho[1];
+		} catch (error) {
+			Phone_P1 = "N/A";
+			Phone_P2 = "N/A";
+			console.error("Error parsing email:", error);
+		}
 
 		const rowData = {
 			teamName,
@@ -110,6 +121,8 @@ function CsvEditor() {
 			Discord_P2,
 			Game_Rank_P1,
 			Game_Rank_P2,
+			Phone_P1,
+			Phone_P2,
 		};
 
 		return rowData;
