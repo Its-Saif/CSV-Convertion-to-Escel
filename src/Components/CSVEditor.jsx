@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import * as xlsx from "xlsx";
 import csvtojson from "csvtojson";
+import "./CSVEditor.css";
 
 function CsvEditor() {
 	const [data, setData] = useState([]);
@@ -152,6 +153,10 @@ function CsvEditor() {
 		} catch (error) {
 			Game_Rank_P1 = "N/A";
 			Game_Rank_P2 = "N/A";
+			Game_Rank_P3 = "N/A";
+			Game_Rank_P4 = "N/A";
+			Game_Rank_P5 = "N/A";
+			Game_Rank_P6 = "N/A";
 			// console.error("Error parsing email:", error);
 		}
 		try {
@@ -302,10 +307,18 @@ function CsvEditor() {
 	};
 
 	return (
-		<div>
-			<input type="file" onChange={handleFileChange} />
-			{/* Render table or other UI components to display data */}
-		</div>
+		<>
+			<section>
+				<div id="info">
+					<h1>CSV Converter</h1>
+					<p>Upload the File below and wait for it to download</p>
+				</div>
+				<div id="FileU">
+					<input type="file" onChange={handleFileChange} />
+					{/* Render table or other UI components to display data */}
+				</div>
+			</section>
+		</>
 	);
 }
 

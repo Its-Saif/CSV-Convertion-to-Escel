@@ -8,7 +8,6 @@ function App() {
 	return (
 		<>
 			<div>
-				<h1>CSV Editor</h1>
 				<CsvEditor />
 			</div>
 			{/* <div>
