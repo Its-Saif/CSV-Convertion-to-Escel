@@ -71,7 +71,19 @@ function CsvEditor() {
 			Phone_P3,
 			Phone_P4,
 			Phone_P5,
-			Phone_P6;
+			Phone_P6,
+			UID_P1,
+			UID_P2,
+			UID_P3,
+			UID_P4,
+			UID_P5,
+			UID_P6,
+			City_P1,
+			City_P2,
+			City_P3,
+			City_P4,
+			City_P5,
+			City_P6;
 
 		try {
 			const playerNames = JSON.parse(row["full-name"]);
@@ -193,6 +205,40 @@ function CsvEditor() {
 			Phone_P6 = "N/A";
 			// console.error("Error parsing email:", error);
 		}
+		try {
+			const uniqueid = JSON.parse(row["UID"]);
+			UID_P1 = uniqueid[0];
+			UID_P2 = uniqueid[1];
+			UID_P3 = uniqueid[2];
+			UID_P4 = uniqueid[3];
+			UID_P5 = uniqueid[4];
+			UID_P6 = uniqueid[5];
+		} catch (error) {
+			UID_P1 = "N/A";
+			UID_P2 = "N/A";
+			UID_P3 = "N/A";
+			UID_P4 = "N/A";
+			UID_P5 = "N/A";
+			UID_P6 = "N/A";
+			// console.error("Error parsing email:", error);
+		}
+		try {
+			const City = JSON.parse(row["City"]);
+			City_P1 = City[0];
+			City_P2 = City[1];
+			City_P3 = City[2];
+			City_P4 = City[3];
+			City_P5 = City[4];
+			City_P6 = City[5];
+		} catch (error) {
+			City_P1 = "N/A";
+			City_P2 = "N/A";
+			City_P3 = "N/A";
+			City_P4 = "N/A";
+			City_P5 = "N/A";
+			City_P6 = "N/A";
+			// console.error("Error parsing email:", error);
+		}
 
 		// const rowData = {
 		// 	teamName,
@@ -224,50 +270,62 @@ function CsvEditor() {
 			Player_1,
 			Phone_P1,
 			Email_P1,
+			UID_P1,
 			Player_1_InGame,
 			Discord_P1,
 			Game_Rank_P1,
 			DOB_P1,
+			City_P1,
 
 			Player_2,
 			Phone_P2,
 			Email_P2,
+			UID_P2,
 			Player_2_InGame,
 			Discord_P2,
 			Game_Rank_P2,
 			DOB_P2,
+			City_P2,
 
 			Player_3,
 			Phone_P3,
 			Email_P3,
+			UID_P3,
 			Player_3_InGame,
 			Discord_P3,
 			Game_Rank_P3,
 			DOB_P3,
+			City_P3,
 
 			Player_4,
 			Phone_P4,
 			Email_P4,
+			UID_P4,
 			Player_4_InGame,
 			Discord_P4,
 			Game_Rank_P4,
 			DOB_P4,
+			City_P4,
 
 			Player_5,
 			Phone_P5,
-			Player_5_InGame,
 			Email_P5,
+			UID_P5,
+			Player_5_InGame,
 			Discord_P5,
 			Game_Rank_P5,
 			DOB_P5,
+			City_P5,
 
 			Player_6,
 			Phone_P6,
 			Email_P6,
+			UID_P6,
 			Player_6_InGame,
 			Discord_P6,
 			Game_Rank_P6,
 			DOB_P6,
+			City_P6,
 		};
 
 		const filteredData = {};
